@@ -16,11 +16,26 @@ class User{
     }
 
     public function register(string $email,string $pseudo, string $password){
-        $prepareregister = $this->connexion->prepare(
-            "INSERT INTO user(id_user, email, pseudo, `password`) VALUES (DEFAULT,?,?,?)"
+        $prepareverif = $this->connexion->prepare(
+            "SELECT `email`, `pseudo` FROM `user` WHERE `email`=:email AND `pseudo`=:pseudo"
         );
-        $sendregister = $prepareregister->execute([$email,$pseudo,$password]);
+        $prepareverif->execute(["email" => $email, "pseudo" => $pseudo]);
 
+        $verif = $prepareverif->fetch();
+
+        if ($verif) {
+            echo "non";
+        } else {
+            $prepareregister = $this->connexion->prepare(
+                "INSERT INTO user(id_user, email, pseudo, `password`) VALUES (DEFAULT,:email,:pseudo,:password)"
+            );
+            $sendregister = $prepareregister->execute(['email' => $email, 'pseudo' => $pseudo, 'password' => $password]);
+        }
+        
+
+
+
+        
     }
 
 
