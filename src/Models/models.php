@@ -16,7 +16,11 @@ class User{
     }
 
     public function register(string $email,string $pseudo, string $password){
-        
+        $prepareregister = $this->connexion->prepare(
+            "INSERT INTO user(id_user, email, pseudo, `password`) VALUES (DEFAULT,?,?,?)"
+        );
+        $sendregister = $prepareregister->execute([$email,$pseudo,$password]);
+
     }
 
 
