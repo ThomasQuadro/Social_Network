@@ -29,7 +29,7 @@ class User{
             $prepareregister = $this->connexion->prepare(
                 "INSERT INTO user(id_user, email, pseudo, `password`) VALUES (DEFAULT,:email,:pseudo,:password)"
             );
-            $sendregister = $prepareregister->execute(['email' => $email, 'pseudo' => $pseudo, 'password' => $password]);
+            $sendregister = $prepareregister->execute(['email' => $email, 'pseudo' => $pseudo, 'password' => hash("sha256",$password)]);
         }
         
 
