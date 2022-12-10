@@ -1,23 +1,27 @@
 <?php
 
-require(__DIR__.'/../Models/models.php');
+//appel du model
+require('../Models/models.php');
 
-$error = "";
+//si on envoie execute la fonction
+if (isset($_POST['submit'])){
 
-$email = $_POST["email"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $pseudo = $email;
+    $user = new user();
+    $log = $user->login($email,$pseudo,$password);
 
-$password = $_POST["password"];
+    if ($log) {
+        //renvoie sur le home
+        header('Location: /Social_Network-master/src/Controllers/settings.php'); //a definir
+    } else {
+        //erreur d'autentification
+        $error = "Echec de l'authentification, l'email et/ou le mot de passe ne correspond(ent) pas !";
+    }
+}
 
-$pseudo = $email;
+//appel du view
+require('../Views/login.php');
 
-$user = new user();
-
-// if valider
-if ($user->login($email,$pseudo,$password)) {
-    //renvoie sur le home
-    header('Location: /Social_Network-master/src/Controllers/settings.php');
-} else {
-    //erreur d'autentification
-    $error = "Echec de l'authentification";
-    require(__DIR__.'/../Views/login.php');
-};
+//good

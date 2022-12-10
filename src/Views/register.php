@@ -7,7 +7,18 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="../Controllers/register.php" method="post" class="form-example">
+
+    <?php 
+    if (isset($_POST["button"])) {
+        echo $error; 
+    }
+    ?>
+    <form action="../Controllers/register.php" method="post" class="form-example" enctype="multipart/form-data">
+
+        <div class="form-exemple">
+            <label for="file">Fichier</label>
+            <input type="file" name="file" required>
+        </div>
 
         <div class="form-example">
             <label for="email">Enter your email: </label>
@@ -25,7 +36,7 @@
         </div>
 
         <div class="form-example">
-            <input type="submit" value="Subscribe!">
+            <input type="submit" name="button" value="Subscribe!">
         </div>
 
     </form>

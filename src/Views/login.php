@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Views/login.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
 <div class="container">
@@ -14,6 +14,15 @@
   </div>
   <div class="containercont">
     <h3>Nom de compte ou adresse mail</h3>
+
+    <div class="error">
+        <?php
+          if (isset($_POST['submit'])) {
+          echo $error;
+          }
+        ?>
+      </div>
+
     <form action="../Controllers/login.php" method="POST" class="form">
       <div class="block">
         <div div class="col">
@@ -26,13 +35,7 @@
         </div>
 
       <input type="submit" value="Valider" class="submit" name="submit">
-      <div class="error">
-        <?php
-          if (isset($_POST['submit'])) {
-          echo $error;
-          }
-        ?>
-      </div>
+
     </form>
 
 
