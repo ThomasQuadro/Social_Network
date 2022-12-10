@@ -21,7 +21,6 @@
 if (isset($_POST['button_mdp']) || isset($_POST['changeimg'])){
     echo $error;
 }
-
 ?>
 
 <form action="../Controllers/settings.php" method="post" class="form-example" enctype="multipart/form-data">
@@ -32,7 +31,7 @@ if (isset($_POST['button_mdp']) || isset($_POST['changeimg'])){
         </div>
 
         <div class="form-example">
-            <input type="submit" value="Subscribe!" name="changeimg">
+            <input type="submit" value="Changer de photo de profil" name="changeimg">
         </div>
 
 </form>
@@ -60,7 +59,7 @@ if (isset($_POST['button_mdp']) || isset($_POST['changeimg'])){
 
 </form>
 <div class="button-delete">
-    <a href="../Controllers/delete.php">delete your account</a>
+    <a href="../Controllers/deleteAccount.php">delete your account</a>
 </div>
 
 <div class="button-disconect">

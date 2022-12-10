@@ -26,35 +26,31 @@
     </form>
 
     <?php
-    echo "liste d'amis :"."<br>";
+        echo "liste d'amis :"."<br>";
         foreach ($list as $key) {
-            echo $key['pseudo']."<br>";
-            ?> 
-                <form action="../Controllers/friends.php?id=<?php echo $key['id_request']; ?>" method="post" class="form-example">
-                    <input type="submit" value="Supprimer" name="Supprimer" class="submit">
-                </form>
-            <?php
-        }
+        echo $key['pseudo']."<br>";
+    ?> 
+        <form action="../Controllers/friends.php?id=<?php echo $key['id_request']; ?>" method="post" class="form-example">
+            <input type="submit" value="Supprimer" name="Supprimer" class="submit">
+        </form>
+    <?php }
         echo 'demandes reçues :'."<br>";
         foreach ($friendsReceive as $key) {
-            echo $key['pseudo']."<br>";
-            ?> 
-                <form action="../Controllers/friends.php?id=<?php echo $key['id_request']; ?>" method="post" class="form-example">
-                    <input type="submit" value="Accepter" name="Accepter" class="submit"> 
-                    <input type="submit" value="Refuser" name="Refuser" class="submit"> 
-                </form>
-            <?php
-        }
+        echo $key['pseudo']."<br>";
+    ?> 
+        <form action="../Controllers/friends.php?id=<?php echo $key['id_request']; ?>" method="post" class="form-example">
+            <input type="submit" value="Accepter" name="Accepter" class="submit"> 
+            <input type="submit" value="Refuser" name="Refuser" class="submit"> 
+        </form>
+    <?php }
         echo "<br>".'demandes envoyées :'."<br>";
         foreach ($friendsRequest as $key) {
-            echo $key['pseudo']."<br>";
-            ?> 
-                <form action="../Controllers/friends.php?id=<?php echo $key['id_request']; ?>" method="post" class="form-example">
-                    <input type="submit" value="Supprimer" name="Supprimer" class="submit"> 
-                </form>
-            <?php
-        }
-    ?>
+        echo $key['pseudo']."<br>";
+    ?> 
+        <form action="../Controllers/friends.php?id=<?php echo $key['id_request']; ?>" method="post" class="form-example">
+            <input type="submit" value="Supprimer" name="Supprimer" class="submit"> 
+        </form>
+    <?php } ?>
 
 </body>
 </html>

@@ -1,29 +1,30 @@
 <?php
-//post des copains
-require('../Models/models.php');
-    $arraypost = new post();
-    $comment = new comment ();
 
-    if (isset($_POST['send'])) {
-        $idpost = $_GET['id'];
-        $message = $_POST['comment'];
-        $comment->createComment($idpost,$message);
-        header("Location: post.php");
-    }
+//see post friends *
+    require('../Models/models.php');
+        $arraypost = new post();
+        $comment = new comment ();
 
-    $page = $_GET['page'];
-    $nbelem = 10;
+        if (isset($_POST['send'])) {
+            $idpost = $_GET['id'];
+            $message = $_POST['comment'];
+            $comment->createComment($idpost,$message);
+            header("Location: post.php");
+        }
 
-    $nbfeed = $arraypost->count();
-    $nbfeed = (int) $nbfeed['COUNT(*)'];
-    $nbpage = ceil($nbfeed/$nbelem);
+        $page = $_GET['page'];
+        $nbelem = 10;
 
-    if(empty($page) || $page > $nbpage) {
-        header("Location: ./feed.php?page=1");
-    }
+        $nbfeed = $arraypost->count();
+        $nbfeed = (int) $nbfeed['COUNT(*)'];
+        $nbpage = ceil($nbfeed/$nbelem);
 
-    $debut = ($page-1)*$nbelem;
+        if(empty($page) || $page > $nbpage) {
+            header("Location: ./feed.php?page=1");
+        }
 
-    $rows = $arraypost->feed($debut, $nbelem);
-    
-require('../Views/feed.php');
+        $debut = ($page-1)*$nbelem;
+
+        $rows = $arraypost->feed($debut, $nbelem);
+        
+    require('../Views/feed.php');

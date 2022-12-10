@@ -15,7 +15,7 @@ foreach ($rows as $row) {
     if ($row['id_user'] == $_SESSION['id_user']){   
 ?>
     <a href="../Controllers/deletePost.php?id=<?php echo $row['id_publication'];?>">Delete</a>
-<?php }?>
+<?php } ?>
 
     <br><img src="../upload/<?php echo $row['id_user']; ?>" style='width:5%;' alt=""><h3><?php echo $row['pseudo']." "; echo $row['date']; ?></h3>
     <h3><?php echo $row['message']; ?></h3>

@@ -1,9 +1,10 @@
 <?php
-//create a comment
-require('../Models/models.php');
 
-$comment = new comment ();
+//create a comment *
+    require('../Models/models.php');
 
-$commentList = $comment->getComments($_GET['id']);
+    $comment = new comment ();
 
-require('../Views/comment.php');
+    $commentList = $comment->getComments($_GET['id']);
+
+    require('../Views/comment.php');

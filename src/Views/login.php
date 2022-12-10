@@ -18,7 +18,7 @@
     <div class="error">
         <?php
           if (isset($_POST['submit'])) {
-          echo $error;
+            echo $error;
           }
         ?>
       </div>

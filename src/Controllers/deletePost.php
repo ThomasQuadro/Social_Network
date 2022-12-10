@@ -1,7 +1,9 @@
 <?php
-require('../Models/models.php');
 
-$post = new post();
-$post->deletePost($_GET['id']);
+//delete a post *
+    require('../Models/models.php');
 
-header('Location: post.php');
+    $post = new post();
+    $post->deletePost($_GET['id']);
+
+    header('Location: post.php');

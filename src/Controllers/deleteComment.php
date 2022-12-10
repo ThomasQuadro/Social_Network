@@ -1,7 +1,9 @@
 <?php 
-require("../Models/models.php");
 
-$comment = new comment();
-$comment->deleteComment($_GET['id']);
+//delete a comment *
+    require("../Models/models.php");
 
-header('Location: post.php');
+    $comment = new comment();
+    $comment->deleteComment($_GET['id']);
+
+    header('Location: post.php');

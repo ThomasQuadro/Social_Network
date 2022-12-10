@@ -9,16 +9,17 @@
 <body>
     <h1>Liste des Publications</h1>
     
-<?php     
+    <?php     
         if (sizeof($rows) == 0) {
             echo "Vous n'avez pas encore ajouté d'amis à votre liste d'amis";
         }
         foreach ($rows as $row) {
             echo "<div style='border:black 1px solid;'>";
             if ($row['id_user'] == $_SESSION['id_user']){       
-?>
+    ?>
     <a href="../Controllers/deletePost.php?id=<?php echo $row['id_publication'];?>">Delete</a>
-<?php }?>
+    
+    <?php } ?>
 
     <br><img src="../upload/<?php echo $row['id_user']; ?>" style='width:5%;' alt=""><h3><?php echo $row['pseudo']." "; echo $row['date']; ?></h3>
     <h3><?php echo $row['message']; ?></h3>
@@ -35,14 +36,13 @@
 
     </div>
     
-<?php } ?>
+    <?php } ?>
 
-<?php
-    for ($i = 1; $i <= $nbpage; $i++) {
-?>
+    <?php
+        for ($i = 1; $i <= $nbpage; $i++) {
+    ?>
         <a href="../Controllers/feed.php?page=<?php echo $i; ?>" class="next"><?php echo $i; ?> </a>
-<?php
-    }
-?>
+
+    <?php } ?>
 </body>
 </html>

@@ -1,8 +1,9 @@
 <?php
 
-require('../Models/models.php');
+//disconnect your account *
+    require('../Models/models.php');
 
-$user = new user();
-$user->disconnect();
+    $user = new user();
+    $user->disconnect();
 
-header("Location: login.php");
+    header("Location: login.php");

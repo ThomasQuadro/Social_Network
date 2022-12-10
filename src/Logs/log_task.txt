@@ -20,3 +20,5 @@
 ::1 s'est déconnecté en tant que  à 06/12/2022 16:29:11
 ::1 s'est connecté en tant que thomas.quadro@gmail.com à 06/12/2022 16:29:15
 ::1 s'est connecté en tant que test1@gmail.com à 09/12/2022 17:09:53
+::1 s'est déconnecté en tant que  à 10/12/2022 17:05:02
+::1 s'est connecté en tant que test1@gmail.com à 10/12/2022 17:08:57
