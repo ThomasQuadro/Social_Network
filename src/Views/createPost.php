@@ -70,7 +70,6 @@
                 </div>
                 <!-- Register buttons -->
  <div class="text-center justify-content-center align-items-center text-decoration-none">
-    <p>Pas encore connectÃ© ? <a href="#!" class="text-black text-decoration-none mx-auto"><strong>Se connecter</strong></a></p>
     <button type="button" class="btn btn-link btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>
     </button>
